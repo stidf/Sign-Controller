@@ -5,7 +5,6 @@
  * Created on April 23, 2016, 4:12 PM
  */
 
-#include "main.h"
 #include "Board.h"
 #include "SoftwarePWM.h"
 
