@@ -7,6 +7,7 @@
 
 #include "Board.h"
 #include "SoftwarePWM.h"
+#include "Display.h"
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -28,23 +29,18 @@ void main() {
   Board::C.on();
  
  SoftwarePWM::init();
- 
- sei();
- 
-  _delay_ms(1000);
   
  
-  u1 j = 0;
+  u2 j = 0;
   while (1) {
-  _delay_ms(50);
-   for (u1 i = 0; i < SoftwarePWM::numChannels; i++) {
-    SoftwarePWM::getMatchArray()[i] = sin(i + j) * 255;
+  _delay_ms(10);
+   for (u1 i = 0; i < Display::numPixels; i++) {
+    Display::writePixel(i, (sin(i / 3. - j / 10.) + 1) / 2 * 255);
    }
 
-   SoftwarePWM::latch();
+   Display::latch();
    
    j++;
-   
   }
  
  

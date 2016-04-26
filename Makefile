@@ -8,7 +8,7 @@
 C =
 
 # List of CPP file basenames to build
-CPP = main Board SoftwarePWM TripleBuffer-impl
+CPP = main Board SoftwarePWM TripleBuffer-impl Display
 
 # Select specific LUFA source files to compile like this
 #LUFA_SRC = LUFA/Drivers/USB/Class/Common/HIDParser.c
