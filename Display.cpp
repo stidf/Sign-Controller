@@ -1,16 +1,16 @@
-/* 
+/*
  * File:   Display.cpp
  * Author: Cameron
- * 
+ *
  * Created on April 23, 2016, 7:39 PM
  */
 
 #include <avr/pgmspace.h>
 
 #include "Display.h"
- 
 //                                                 B e r n i e  S  a  n  d  e  r s
-static const u1 MAP[Display::numPixels] PROGMEM = {0,1,2,3,4,5,15,14,13,12,11,10,9};
+//                                                 C u l l e n 4  C  o  u  n  c  i l
+static const u1 MAP[Display::numPixels] PROGMEM = {0,1,2,3,4,5,6,15,14,13,12,11,10,9};
 
 void Display::writePixel(u1 pixel, u1 val) {
  SoftwarePWM::getMatchArray()[pgm_read_byte(&MAP[pixel])] = exponential(val);

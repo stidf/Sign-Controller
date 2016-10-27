@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   Display.h
  * Author: Cameron
  *
@@ -16,11 +16,11 @@ using namespace AVR;
 
 class Display {
 public:
- static constexpr u1 numPixels = 13;
+ static constexpr u1 numPixels = 14;
 private:
- 
+
  inline static u1 exponential(u1);
- 
+
 public:
  static void writePixel(u1 pixel, u1 val);
  inline static void latch() {SoftwarePWM::latch();}
@@ -29,4 +29,3 @@ private:
 };
 
 #endif	/* DISPLAY_H */
-
